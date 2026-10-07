@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NIRAVLE — Defined with Elegance</title>
+  <meta
+    name="description"
+    content="NIRAVLE — A contemporary fashion identity defined by elegance, restraint and refined detail."
+  />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --cream:#f4efe5;
+      --paper:#fbf9f4;
+      --deep-green:#17362d;
+      --green:#23483c;
+      --soft-green:#53685d;
+      --olive:#7a8068;
+      --gold:#b49a61;
+      --ink:#17201d;
+      --muted:#69716b;
+      --line:rgba(23,54,45,.14);
+      --white:#fffdfa;
+
+      --serif:"Playfair Display", Georgia, serif;
+      --sans:"DM Sans", Arial, sans-serif;
+
+      --shadow:0 20px 60px rgba(23,54,45,.08);
+      --radius:2px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--paper);
+      color:var(--ink);
+      font-family:var(--sans);
+      font-weight:400;
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button{
+      font:inherit;
+    }
+
+    ::selection{
+      background:var(--deep-green);
+      color:var(--cream);
+    }
+
+    /* =========================
+       ANNOUNCEMENT
+    ========================== */
+
+    .top{
+      min-height:34px;
+      padding:8px 20px;
+      background:var(--deep-green);
+      color:#eee9dc;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      font-size:10px;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    .nav{
+      height:86px;
+      padding:0 5.5vw;
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      align-items:center;
+      background:rgba(251,249,244,.96);
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(14px);
+    }
+
+    .brand-lockup{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      justify-self:start;
+    }
+
+    .brand-lockup img{
+      width:31px;
+      height:31px;
+      object-fit:contain;
+    }
+
+    .brand-lockup span{
+      font-size:18px;
+      font-weight:600;
+      letter-spacing:.34em;
+      color:var(--deep-green);
+    }
+
+    .navlinks{
+      display:flex;
+      align-items:center;
+      gap:32px;
+      justify-content:center;
+    }
+
+    .navlinks a{
+      position:relative;
+      font-size:10px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#4e5a54;
+      transition:.3s ease;
+    }
+
+    .navlinks a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-7px;
+      width:0;
+      height:1px;
+      background:var(--gold);
+      transition:.3s ease;
+    }
+
+    .navlinks a:hover{
+      color:var(--deep-green);
+    }
+
+    .navlinks a:hover::after{
+      width:100%;
+    }
+
+    .mark{
+      justify-self:end;
+    }
+
+    .mark img{
+      width:30px;
+      height:30px;
+      object-fit:contain;
+      opacity:.75;
+    }
+
+    /* =========================
+       GLOBAL
+    ========================== */
+
+    .section{
+      padding:120px 7vw;
+    }
+
+    .eyebrow{
+      margin-bottom:18px;
+      color:var(--gold);
+      font-size:10px;
+      font-weight:600;
+      letter-spacing:.27em;
+      text-transform:uppercase;
+    }
+
+    .section-title{
+      max-width:780px;
+      font-family:var(--serif);
+      color:var(--deep-green);
+      font-size:clamp(38px,5vw,70px);
+      font-weight:400;
+      line-height:1.08;
+      letter-spacing:-.025em;
+    }
+
+    .section-copy{
+      max-width:580px;
+      margin-top:28px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.9;
+    }
+
+    .thin-line{
+      width:100%;
+      height:1px;
+      background:var(--line);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero{
+      min-height:calc(100vh - 120px);
+      padding:70px 7vw;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(23,54,45,.97) 0%,
+          rgba(23,54,45,.91) 42%,
+          rgba(23,54,45,.48) 75%,
+          rgba(23,54,45,.18) 100%
+        ),
+        url("assets/brand-identity.png") center/cover no-repeat;
+      color:#f8f4eb;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(
+        180deg,
+        rgba(0,0,0,.04),
+        rgba(0,0,0,.18)
+      );
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:780px;
+    }
+
+    .hero .eyebrow{
+      color:#c9b27a;
+      margin-bottom:24px;
+    }
+
+    .hero h1{
+      font-family:var(--serif);
+      font-size:clamp(58px,9vw,130px);
+      font-weight:400;
+      line-height:.91;
+      letter-spacing:-.045em;
+      max-width:900px;
+    }
+
+    .hero-subtitle{
+      margin-top:32px;
+      max-width:490px;
+      color:rgba(248,244,235,.77);
+      font-size:15px;
+      line-height:1.85;
+    }
+
+    .hero-bottom{
+      margin-top:48px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .hero-rule{
+      width:62px;
+      height:1px;
+      background:#b49a61;
+    }
+
+    .hero-note{
+      font-size:10px;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:rgba(248,244,235,.7);
+    }
+
+    /* =========================
+       INTRO
+    ========================== */
+
+    .intro{
+      background:var(--paper);
+      padding-top:130px;
+      padding-bottom:125px;
+    }
+
+    .intro-inner{
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:100px;
+      align-items:end;
+    }
+
+    .intro-title{
+      font-family:var(--serif);
+      font-size:clamp(42px,5.7vw,76px);
+      line-height:1.06;
+      font-weight:400;
+      color:var(--deep-green);
+      letter-spacing:-.03em;
+    }
+
+    .intro-title span{
+      display:block;
+      color:#7c806d;
+    }
+
+    .intro-side{
+      padding-bottom:5px;
+    }
+
+    .intro-side p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.95;
+    }
+
+    /* =========================
+       COLLECTION
+    ========================== */
+
+    .shop{
+      background:var(--cream);
+      padding-top:115px;
+      padding-bottom:125px;
+    }
+
+    .shop-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:40px;
+      padding-bottom:38px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .shop-title{
+      font-family:var(--serif);
+      font-size:clamp(42px,5vw,68px);
+      font-weight:400;
+      color:var(--deep-green);
+      line-height:1.05;
+    }
+
+    .shop-description{
+      max-width:390px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.8;
+    }
+
+    .product-grid{
+      margin-top:48px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:22px;
+    }
+
+    .product-card{
+      background:var(--paper);
+      min-width:0;
+      transition:transform .4s ease, box-shadow .4s ease;
+      position:relative;
+    }
+
+    .product-card:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow);
+    }
+
+    .product-image{
+      width:100%;
+      aspect-ratio:3/4;
+      object-fit:cover;
+      background:#e9e3d7;
+    }
+
+    .product-info{
+      padding:20px 18px 23px;
+    }
+
+    .product-category{
+      color:var(--gold);
+      font-size:9px;
+      font-weight:600;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .product-name{
+      margin-top:8px;
+      color:var(--deep-green);
+      font-family:var(--serif);
+      font-size:20px;
+      line-height:1.2;
+    }
+
+    .product-price{
+      margin-top:11px;
+      color:var(--ink);
+      font-size:13px;
+      font-weight:600;
+      letter-spacing:.04em;
+    }
+
+    .product-description{
+      margin-top:9px;
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.65;
+    }
+
+    .product-badge{
+      position:absolute;
+      top:13px;
+      left:13px;
+      padding:6px 9px;
+      background:var(--deep-green);
+      color:#f4efe5;
+      font-size:8px;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+    }
+
+    /* =========================
+       VALUES
+    ========================== */
+
+    .values{
+      background:var(--deep-green);
+      color:var(--cream);
+    }
+
+    .values .eyebrow{
+      color:#c7af77;
+    }
+
+    .values .section-title{
+      color:var(--cream);
+    }
+
+    .values-grid{
+      margin-top:75px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      border-top:1px solid rgba(244,239,229,.18);
+    }
+
+    .value-item{
+      padding:38px 35px 25px 0;
+      border-right:1px solid rgba(244,239,229,.18);
+    }
+
+    .value-item:not(:first-child){
+      padding-left:35px;
+    }
+
+    .value-item:last-child{
+      border-right:0;
+    }
+
+    .value-number{
+      color:#b49a61;
+      font-size:10px;
+      letter-spacing:.2em;
+    }
+
+    .value-item h3{
+      margin-top:25px;
+      font-family:var(--serif);
+      color:var(--cream);
+      font-size:28px;
+      font-weight:400;
+    }
+
+    .value-item p{
+      margin-top:15px;
+      color:rgba(244,239,229,.65);
+      font-size:12px;
+      line-height:1.8;
+      max-width:300px;
+    }
+
+    /* =========================
+       IDENTITY
+    ========================== */
+
+    .identity{
+      background:var(--paper);
+    }
+
+    .identity-layout{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:90px;
+      align-items:center;
+    }
+
+    .identity-visual{
+      min-height:540px;
+      background:
+        linear-gradient(
+          rgba(23,54,45,.1),
+          rgba(23,54,45,.1)
+        ),
+        url("assets/brand-identity.png") center/cover no-repeat;
+    }
+
+    .identity-copy h2{
+      font-family:var(--serif);
+      color:var(--deep-green);
+      font-size:clamp(42px,5.5vw,76px);
+      font-weight:400;
+      line-height:1.03;
+      letter-spacing:-.035em;
+    }
+
+    .identity-copy p{
+      margin-top:30px;
+      max-width:500px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.95;
+    }
+
+    .identity-signature{
+      margin-top:45px;
+      color:var(--gold);
+      font-size:10px;
+      letter-spacing:.23em;
+      text-transform:uppercase;
+    }
+
+    /* =========================
+       PACKAGING
+    ========================== */
+
+    .packaging{
+      background:#eee8dc;
+    }
+
+    .packaging-layout{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      min-height:590px;
+      align-items:center;
+    }
+
+    .packaging-copy{
+      padding-right:8vw;
+    }
+
+    .packaging-copy h2{
+      font-family:var(--serif);
+      color:var(--deep-green);
+      font-size:clamp(43px,5.5vw,75px);
+      font-weight:400;
+      line-height:1.04;
+      letter-spacing:-.03em;
+    }
+
+    .packaging-copy p{
+      margin-top:27px;
+      max-width:480px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.9;
+    }
+
+    .packaging-visual{
+      min-height:590px;
+      background:
+        linear-gradient(
+          rgba(23,54,45,.05),
+          rgba(23,54,45,.05)
+        ),
+        url("assets/packaging-latest.png") center/cover no-repeat;
+    }
+
+    /* =========================
+       BOTANICAL
+    ========================== */
+
+    .botanical-section{
+      background:var(--paper);
+      text-align:center;
+      padding-top:125px;
+      padding-bottom:130px;
+    }
+
+    .botanical-inner{
+      max-width:950px;
+      margin:auto;
+    }
+
+    .botanical-mark{
+      width:58px;
+      height:58px;
+      margin:0 auto 30px;
+      object-fit:contain;
+      opacity:.72;
+    }
+
+    .botanical-section h2{
+      font-family:var(--serif);
+      color:var(--deep-green);
+      font-size:clamp(43px,6vw,82px);
+      line-height:1.02;
+      font-weight:400;
+      letter-spacing:-.04em;
+    }
+
+    .botanical-section p{
+      max-width:580px;
+      margin:28px auto 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.95;
+    }
+
+    /* =========================
+       FINAL
+    ========================== */
+
+    .final{
+      min-height:570px;
+      padding:110px 7vw;
+      background:var(--deep-green);
+      color:var(--cream);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+
+    .final-inner{
+      max-width:950px;
+    }
+
+    .final .eyebrow{
+      color:#c5ad75;
+    }
+
+    .final h2{
+      font-family:var(--serif);
+      font-size:clamp(46px,7vw,92px);
+      line-height:1.02;
+      font-weight:400;
+      letter-spacing:-.04em;
+      color:var(--cream);
+    }
+
+    .final p{
+      max-width:520px;
+      margin:28px auto 0;
+      color:rgba(244,239,229,.65);
+      font-size:13px;
+      line-height:1.9;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer{
+      background:#102820;
+      color:rgba(244,239,229,.62);
+      padding:55px 7vw 35px;
+    }
+
+    .footer-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:50px;
+    }
+
+    .footer-brand{
+      display:flex;
+      align-items:center;
+      gap:13px;
+    }
+
+    .footer-brand img{
+      width:31px;
+      height:31px;
+      object-fit:contain;
+    }
+
+    .footer-brand span{
+      color:var(--cream);
+      font-size:17px;
+      letter-spacing:.3em;
+      font-weight:600;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .footer-links a{
+      font-size:9px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      transition:.3s ease;
+    }
+
+    .footer-links a:hover{
+      color:var(--cream);
+    }
+
+    .footer-bottom{
+      margin-top:50px;
+      padding-top:22px;
+      border-top:1px solid rgba(244,239,229,.12);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      font-size:9px;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:1050px){
+
+      .nav{
+        grid-template-columns:auto 1fr auto;
+        padding:0 4vw;
+      }
+
+      .navlinks{
+        gap:20px;
+      }
+
+      .product-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .intro-inner,
+      .identity-layout{
+        gap:55px;
+      }
+    }
+
+    @media(max-width:800px){
+
+      .top{
+        font-size:8px;
+        letter-spacing:.2em;
+      }
+
+      .nav{
+        height:74px;
+        grid-template-columns:auto auto;
+      }
+
+      .brand-lockup span{
+        font-size:15px;
+      }
+
+      .mark{
+        display:none;
+      }
+
+      .navlinks{
+        display:none;
+      }
+
+      .section{
+        padding:85px 6vw;
+      }
+
+      .hero{
+        min-height:calc(100vh - 108px);
+        padding:65px 6vw;
+        background-position:center;
+      }
+
+      .hero h1{
+        font-size:clamp(56px,15vw,90px);
+      }
+
+      .hero-subtitle{
+        font-size:13px;
+        max-width:390px;
+      }
+
+      .intro-inner{
+        grid-template-columns:1fr;
+        gap:35px;
+      }
+
+      .intro-title{
+        font-size:clamp(43px,12vw,65px);
+      }
+
+      .shop-head{
+        display:block;
+      }
+
+      .shop-description{
+        margin-top:22px;
+      }
+
+      .product-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:13px;
+      }
+
+      .product-info{
+        padding:15px 13px 18px;
+      }
+
+      .product-name{
+        font-size:17px;
+      }
+
+      .product-description{
+        font-size:10px;
+      }
+
+      .values-grid{
+        grid-template-columns:1fr;
+      }
+
+      .value-item,
+      .value-item:not(:first-child){
+        padding:30px 0;
+        border-right:0;
+        border-bottom:1px solid rgba(244,239,229,.18);
+      }
+
+      .value-item:last-child{
+        border-bottom:0;
+      }
+
+      .identity-layout{
+        grid-template-columns:1fr;
+        gap:45px;
+      }
+
+      .identity-visual{
+        min-height:430px;
+      }
+
+      .packaging-layout{
+        grid-template-columns:1fr;
+      }
+
+      .packaging-copy{
+        padding:0 0 55px;
+      }
+
+      .packaging-visual{
+        min-height:430px;
+      }
+
+      .botanical-section{
+        padding-top:90px;
+        padding-bottom:95px;
+      }
+
+      .final{
+        min-height:470px;
+        padding:85px 6vw;
+      }
+
+      .footer-top,
+      .footer-bottom{
+        flex-direction:column;
+      }
+
+      .footer-links{
+        flex-wrap:wrap;
+        gap:18px;
+      }
+
+      .footer-bottom{
+        gap:8px;
+      }
+    }
+
+    @media(max-width:480px){
+
+      .product-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .product-image{
+        aspect-ratio:4/5;
+      }
+
+      .product-category{
+        font-size:8px;
+      }
+
+      .product-name{
+        font-size:16px;
+      }
+
+      .product-price{
+        font-size:12px;
+      }
+
+      .hero-bottom{
+        margin-top:35px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       ANNOUNCEMENT
+  ========================== -->
+
+  <div class="top">
+    NIRAVLE · DEFINED WITH ELEGANCE
+  </div>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav class="nav">
+
+    <a class="brand-lockup" href="#top" aria-label="NIRAVLE home">
+      <img
+        src="assets_nstar_logo.png"
+        alt="NIRAVLE N-star monogram"
+      />
+      <span>NIRAVLE</span>
+    </a>
+
+    <div class="navlinks">
+      <a href="#identity">Identity</a>
+      <a href="#collection">Collection</a>
+      <a href="#values">Values</a>
+      <a href="#packaging">Packaging</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="mark">
+      <img
+        src="assets_nstar_logo.png"
+        alt="NIRAVLE N-star logo"
+      />
+    </div>
+
+  </nav>
+
+  <main id="top">
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          The NIRAVLE identity
+        </div>
+
+        <h1>
+          Defined<br>
+          with elegance.
+        </h1>
+
+        <p class="hero-subtitle">
+          A considered expression of contemporary fashion,
+          shaped by quiet confidence, refined details and
+          an unmistakable sense of identity.
+        </p>
+
+        <div class="hero-bottom">
+          <div class="hero-rule"></div>
+
+          <div class="hero-note">
+            NIRAVLE — EST. WITH INTENTION
+          </div>
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- =========================
+         INTRODUCTION
+    ========================== -->
+
+    <section class="section intro" id="identity">
+
+      <div class="intro-inner">
+
+        <div>
+          <div class="eyebrow">
+            The beginning
+          </div>
+
+          <h2 class="intro-title">
+            A quiet identity.
+            <span>A clear presence.</span>
+          </h2>
+        </div>
+
+        <div class="intro-side">
+
+          <p>
+            NIRAVLE is built around a simple idea:
+            elegance does not need to announce itself.
+            Every silhouette, texture and detail is
+            thoughtfully considered to create a presence
+            that feels effortless and lasting.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         COLLECTION
+    ========================== -->
+
+    <section class="section shop" id="collection">
+
+      <div class="shop-head">
+
+        <div>
+          <div class="eyebrow">
+            The collection
+          </div>
+
+          <h2 class="shop-title">
+            Selected for<br>
+            the NIRAVLE world.
+          </h2>
+        </div>
+
+        <p class="shop-description">
+          Thoughtfully selected pieces defined by
+          refined design, considered details and
+          an understated sense of luxury.
+        </p>
+
+      </div>
+
+      <!-- Products loaded automatically from Supabase -->
+      <div id="productGrid" class="product-grid">
+
+        <div style="
+          grid-column:1/-1;
+          padding:60px 20px;
+          text-align:center;
+          color:#69716b;
+          font-size:13px;
+        ">
+          Loading collection…
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         NIRAVLE CODE / VALUES
+    ========================== -->
+
+    <section class="section values" id="values">
+
+      <div class="eyebrow">
+        The NIRAVLE code
+      </div>
+
+      <h2 class="section-title">
+        Less noise.<br>
+        More identity.
+      </h2>
+
+      <div class="values-grid">
+
+        <div class="value-item">
+
+          <div class="value-number">
+            01 / FORM
+          </div>
+
+          <h3>
+            Considered
+          </h3>
+
+          <p>
+            Clean silhouettes and thoughtful proportions
+            create a visual language that feels natural,
+            balanced and enduring.
+          </p>
+
+        </div>
+
+        <div class="value-item">
+
+          <div class="value-number">
+            02 / DETAIL
+          </div>
+
+          <h3>
+            Refined
+          </h3>
+
+          <p>
+            The smallest details matter. Materials,
+            finishes and subtle accents are chosen
+            with intention.
+          </p>
+
+        </div>
+
+        <div class="value-item">
+
+          <div class="value-number">
+            03 / PRESENCE
+          </div>
+
+          <h3>
+            Effortless
+          </h3>
+
+          <p>
+            NIRAVLE does not follow excess.
+            It creates a presence that remains
+            confident without being loud.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         VISUAL IDENTITY
+    ========================== -->
+
+    <section class="section identity">
+
+      <div class="identity-layout">
+
+        <div class="identity-visual"></div>
+
+        <div class="identity-copy">
+
+          <div class="eyebrow">
+            Visual identity
+          </div>
+
+          <h2>
+            One world.<br>
+            Every touchpoint.
+          </h2>
+
+          <p>
+            From the first impression to the final detail,
+            every element of NIRAVLE is designed to belong
+            to the same visual world — understated,
+            distinctive and refined.
+          </p>
+
+          <div class="identity-signature">
+            NIRAVLE / Visual Language
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PACKAGING
+    ========================== -->
+
+    <section class="section packaging" id="packaging">
+
+      <div class="packaging-layout">
+
+        <div class="packaging-copy">
+
+          <div class="eyebrow">
+            The experience
+          </div>
+
+          <h2>
+            The NIRAVLE
+            experience.
+          </h2>
+
+          <p>
+            A brand is experienced beyond the product.
+            Packaging, presentation and every small
+            touchpoint are designed to make receiving
+            NIRAVLE feel just as considered as wearing it.
+          </p>
+
+        </div>
+
+        <div class="packaging-visual"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         NATURE / SIGNATURE MOTIF
+    ========================== -->
+
+    <section class="section botanical-section">
+
+      <div class="botanical-inner">
+
+        <img
+          class="botanical-mark"
+          src="assets_nstar_logo.png"
+          alt="NIRAVLE signature mark"
+        />
+
+        <div class="eyebrow">
+          Signature motif
+        </div>
+
+        <h2>
+          Where nature<br>
+          meets refinement.
+        </h2>
+
+        <p>
+          Inspired by organic forms, muted tones and
+          natural balance, NIRAVLE finds beauty in the
+          relationship between simplicity and detail.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL STATEMENT
+    ========================== -->
+
+    <section class="final" id="contact">
+
+      <div class="final-inner">
+
+        <div class="eyebrow">
+          NIRAVLE
+        </div>
+
+        <h2>
+          Elegance,<br>
+          with intention.
+        </h2>
+
+        <p>
+          A quiet expression. A distinctive identity.
+          A world designed with purpose.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <img
+          src="assets_nstar_logo.png"
+          alt="NIRAVLE logo"
+        />
+
+        <span>NIRAVLE</span>
+
+      </div>
+
+      <div class="footer-links">
+
+        <a href="#top">Home</a>
+        <a href="#collection">Collection</a>
+        <a href="#identity">Identity</a>
+        <a href="#packaging">Packaging</a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 NIRAVLE. All rights reserved.
+      </span>
+
+      <span>
+        Defined with elegance.
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       SUPABASE + SHOP SYSTEM
+       DO NOT REMOVE
+  ========================== -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script src="supabase-config.js"></script>
+
+  <script src="shop.js"></script>
+
+</body>
+</html>

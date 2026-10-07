@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NIRAVLE — Defined by Detail.</title>
+<meta name="description" content="NIRAVLE — contemporary fashion, refined with intention.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f2ec;--ink:#11110f;--muted:#77736b;--line:#d8d2c8;--card:#e7e2d9;--white:#fbfaf7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}
+.top{height:32px;background:#111;color:#eee;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:.2em;text-transform:uppercase}
+header{height:80px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 4.5vw;position:sticky;top:0;background:#f5f2ecee;backdrop-filter:blur(14px);z-index:20}
+.logo{font:500 28px "Playfair Display";letter-spacing:.2em}.nav{display:flex;gap:30px;font-size:10px;letter-spacing:.18em;text-transform:uppercase}.actions{justify-self:end;display:flex;gap:18px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}.actions button{border:0;background:none}
+.hero{height:calc(100vh - 112px);min-height:620px;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:linear-gradient(135deg,#d8d2c7,#777064)}
+.hero:after{content:"N";position:absolute;right:-5vw;top:-15vw;font:400 75vw/1 "Playfair Display";color:#fff;opacity:.07}.hero-copy{position:relative;z-index:2;color:#fff;padding:7vw 5vw;max-width:850px}.kicker{font-size:9px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:22px}.hero h1{font:400 clamp(68px,10vw,160px)/.83 "Playfair Display";letter-spacing:-.045em;margin:0}.hero p{max-width:450px;line-height:1.8;font-size:14px;color:#eee;margin:30px 0}.btn{display:inline-block;padding:15px 23px;background:#fff;color:#111;border:0;font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.intro{text-align:center;padding:120px 8vw}.intro h2{font:400 clamp(42px,5.5vw,76px)/1.04 "Playfair Display";max-width:900px;margin:0 auto}.intro p{max-width:580px;color:var(--muted);line-height:1.9;margin:30px auto 0;font-size:14px}
+.section{padding:20px 4.5vw 110px}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:30px}.head h2{font:400 48px "Playfair Display";margin:0}.head span{font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{cursor:pointer}.visual{aspect-ratio:3/4;background:var(--card);position:relative;display:grid;place-items:center;overflow:hidden}.visual:after{content:"NIRAVLE";font:400 55px "Playfair Display";opacity:.08;transform:rotate(-90deg);letter-spacing:.1em}.badge{position:absolute;top:13px;left:13px;background:#111;color:#fff;padding:7px 9px;font-size:8px;letter-spacing:.15em;text-transform:uppercase;z-index:2}.info{padding:13px 2px;display:flex;justify-content:space-between;font-size:12px;gap:10px}.price{color:var(--muted)}
+.editorial{margin:0 4.5vw 110px;min-height:650px;background:linear-gradient(135deg,#252421,#a39b8f);color:#fff;display:flex;align-items:flex-end;padding:6vw;position:relative;overflow:hidden}.editorial:after{content:"N";position:absolute;right:-5vw;top:-14vw;font:400 75vw "Playfair Display";opacity:.06}.editorial-copy{position:relative;z-index:2}.editorial h2{font:400 clamp(55px,7vw,105px)/.88 "Playfair Display";margin:10px 0 25px}.editorial p{max-width:460px;line-height:1.8;color:#ddd}.outline{display:inline-block;border:1px solid #fff;color:#fff;padding:14px 21px;margin-top:15px;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.story{display:grid;grid-template-columns:1fr 1fr;margin-bottom:110px}.story-image{min-height:620px;background:linear-gradient(145deg,#d4cec3,#777063);display:grid;place-items:center}.story-image span{font:400 24vw "Playfair Display";color:#fff;opacity:.13}.story-copy{background:#111;color:#f5f2ec;padding:9vw 8vw}.story-copy h2{font:400 clamp(45px,5vw,78px)/.95 "Playfair Display";margin:0 0 28px}.story-copy p{color:#aaa;line-height:1.9;max-width:510px}
+footer{border-top:1px solid var(--line);padding:60px 4.5vw 28px}.footgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}.flogo{font:400 34px "Playfair Display";letter-spacing:.15em}.ft{font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:17px}.links{display:grid;gap:10px;font-size:12px;color:var(--muted)}.copy{border-top:1px solid var(--line);margin-top:55px;padding-top:20px;font-size:10px;color:var(--muted);display:flex;justify-content:space-between}
+.drawer,.checkout-modal{position:fixed;z-index:50;background:var(--white);box-shadow:-20px 0 60px #0002}.drawer{right:-480px;top:0;width:min(480px,100%);height:100vh;padding:30px;transition:.35s}.drawer.open{right:0}.overlay{position:fixed;inset:0;background:#0007;z-index:45;display:none}.overlay.show{display:block}.drawerhead{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.18em}.close{border:0;background:none;font-size:27px}.cartrow{border-bottom:1px solid var(--line);padding:16px 0;display:flex;justify-content:space-between;font-size:12px}.cartrow small{display:block;color:var(--muted);margin-top:6px}.drawer-bottom{position:absolute;bottom:28px;left:30px;right:30px;border-top:1px solid var(--line);padding-top:18px}.full{width:100%;padding:15px;border:0;background:#111;color:#fff;letter-spacing:.18em;font-size:10px}
+.checkout-modal{display:none;top:50%;left:50%;transform:translate(-50%,-50%);width:min(720px,94vw);max-height:90vh;overflow:auto;padding:35px}.checkout-modal.open{display:block}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.checkout-modal h2{font:400 42px "Playfair Display";margin:0 0 8px}.sub{font-size:12px;color:var(--muted);margin-bottom:25px}.field{display:grid;gap:7px;margin-bottom:14px}.field label{font-size:9px;letter-spacing:.15em;text-transform:uppercase}.field input,.field select,.field textarea{border:1px solid var(--line);background:#f7f4ee;padding:13px;outline:none}.field textarea{min-height:90px;resize:vertical}.wide{grid-column:1/-1}.payment{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.payment label{border:1px solid var(--line);padding:13px;font-size:10px;text-align:center;cursor:pointer}.payment input{display:none}.payment input:checked+span{font-weight:600}.notice{background:#ece7de;padding:12px;font-size:11px;line-height:1.6;margin:15px 0}.success{display:none;text-align:center;padding:40px 10px}.success h2{font:400 46px "Playfair Display";margin:0 0 15px}.success p{color:var(--muted);line-height:1.8}
+@media(max-width:850px){header{grid-template-columns:auto 1fr auto}.nav{display:none}.products{grid-template-columns:repeat(2,1fr)}.story{grid-template-columns:1fr}.story-image{min-height:390px}.footgrid{grid-template-columns:1fr 1fr}.hero{min-height:700px}.formgrid{grid-template-columns:1fr}.wide{grid-column:auto}}
+@media(max-width:520px){.top{font-size:7px}.logo{font-size:22px}.actions a{display:none}.hero-copy{padding:50px 6vw}.hero h1{font-size:64px}.head h2{font-size:36px}.section{padding-bottom:75px}.editorial{min-height:530px;padding:9vw}.story-copy{padding:16vw 9vw}.payment{grid-template-columns:1fr}.copy{display:block;line-height:2}}
+</style>
+</head>
+<body>
+<div class="top">Complimentary delivery on orders over ৳ 5,000</div>
+<header>
+<nav class="nav"><a href="#collection">Collection</a><a href="#journal">Journal</a></nav>
+<a class="logo" href="#">NIRAVLE</a>
+<div class="actions"><a href="#about">About</a><button onclick="openCart()">Bag (<span id="count">0</span>)</button></div>
+</header>
+
+<section class="hero">
+<div class="hero-copy"><div class="kicker">Niravle / New Collection</div><h1>Quietly<br>Distinct.</h1><p>Contemporary essentials, refined with intention. Designed for those who let detail speak.</p><a class="btn" href="#collection">Explore Collection</a></div>
+</section>
+
+<section class="intro"><div class="kicker">The House of Niravle</div><h2>Style does not ask for attention. It earns it.</h2><p>We create considered pieces for people who value character over noise. Every silhouette, texture and detail is part of a larger language.</p></section>
+
+<section class="section" id="collection">
+<div class="head"><h2>New Collection</h2><span>2026 / Collection 01</span></div>
+<div class="products">
+<div class="card" onclick="openProduct('Signature Oxford Shirt',2890,'A refined everyday shirt with a clean, structured silhouette.','S,M,L,XL')"><div class="visual"><span class="badge">New</span></div><div class="info"><span>Signature Oxford Shirt</span><span class="price">৳ 2,890</span></div></div>
+<div class="card" onclick="openProduct('Essential Heavy Tee',1490,'A substantial everyday essential with a relaxed premium fit.','S,M,L,XL')"><div class="visual"></div><div class="info"><span>Essential Heavy Tee</span><span class="price">৳ 1,490</span></div></div>
+<div class="card" onclick="openProduct('Relaxed Tailored Trouser',3290,'A modern relaxed trouser designed for effortless styling.','S,M,L,XL')"><div class="visual"><span class="badge">Edition 01</span></div><div class="info"><span>Relaxed Tailored Trouser</span><span class="price">৳ 3,290</span></div></div>
+<div class="card" onclick="openProduct('Niravle Overshirt',3590,'A versatile outer layer with a clean, understated character.','S,M,L,XL')"><div class="visual"></div><div class="info"><span>Niravle Overshirt</span><span class="price">৳ 3,590</span></div></div>
+</div></section>
+
+<section class="editorial" id="journal"><div class="editorial-copy"><div class="kicker">Niravle Journal / 001</div><h2>The art of<br>less.</h2><p>From the cut of a collar to the quiet weight of a fabric, refinement lives in the details that are almost unnoticed.</p><a class="outline" href="#about">Read the story</a></div></section>
+
+<section class="story" id="about"><div class="story-image"><span>N</span></div><div class="story-copy"><div class="kicker">Our Philosophy</div><h2>Made with intention.</h2><p>Niravle is a modern fashion house built around clarity, quality and individuality. We are not interested in chasing every season. We build a distinctive wardrobe language—pieces that feel relevant today and remain meaningful tomorrow.</p><p>Quiet luxury. Modern utility. Personal expression.</p></div></section>
+
+<footer><div class="footgrid"><div><div class="flogo">NIRAVLE</div><p style="font-size:12px;color:#777;line-height:1.7;max-width:280px">Contemporary essentials, refined with intention.</p></div><div><div class="ft">Explore</div><div class="links"><a href="#collection">Collection</a><a href="#journal">Journal</a><a href="#about">About</a></div></div><div><div class="ft">Help</div><div class="links"><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Size Guide</a></div></div><div><div class="ft">Connect</div><div class="links"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">WhatsApp</a></div></div></div><div class="copy"><span>© 2026 NIRAVLE. All rights reserved.</span><span>Defined by Detail.</span></div></footer>
+
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+<aside class="drawer" id="drawer"><div class="drawerhead"><span>YOUR BAG</span><button class="close" onclick="closeCart()">×</button></div><div id="cartitems" style="margin-top:30px"></div><div class="drawer-bottom"><div style="display:flex;justify-content:space-between;margin-bottom:14px;font-size:12px"><span>Total</span><b id="total">৳ 0</b></div><button class="full" onclick="openCheckout()">CHECKOUT</button></div></aside>
+
+<div class="checkout-modal" id="checkout">
+<div id="checkoutform">
+<div style="display:flex;justify-content:space-between;align-items:start"><div><div class="kicker">Niravle / Checkout</div><h2>Complete your order.</h2></div><button class="close" onclick="closeAll()">×</button></div>
+<div class="sub">Fill in your delivery information. We will confirm your order before dispatch.</div>
+<div class="formgrid">
+<div class="field"><label>Full name</label><input id="name" required placeholder="Your name"></div>
+<div class="field"><label>Phone number</label><input id="phone" required placeholder="01XXXXXXXXX" type="tel"></div>
+<div class="field wide"><label>Delivery address</label><textarea id="address" required placeholder="House, road, area, district"></textarea></div>
+<div class="field"><label>District</label><input id="district" placeholder="e.g. Tangail"></div>
+<div class="field"><label>Postal code</label><input id="postal" placeholder="Optional"></div>
+<div class="field wide"><label>Payment method</label><div class="payment">
+<label><input type="radio" name="pay" value="Cash on Delivery" checked><span>Cash on Delivery</span></label>
+<label><input type="radio" name="pay" value="bKash"><span>bKash</span></label>
+<label><input type="radio" name="pay" value="Nagad"><span>Nagad</span></label>
+</div></div>
+</div>
+<div class="notice">For bKash/Nagad, this starter version records your selected method. Before launch, connect your merchant payment gateway so payments are verified automatically.</div>
+<button class="full" onclick="placeOrder()">PLACE ORDER</button>
+</div>
+<div class="success" id="success"><div class="kicker">Order received</div><h2>Thank you.</h2><p id="successText"></p><button class="full" onclick="closeAll()">CONTINUE SHOPPING</button></div>
+</div>
+
+<div class="checkout-modal" id="productModal">
+<div style="display:flex;justify-content:space-between"><div><div class="kicker">Niravle / Product</div><h2 id="pmName" style="font:400 42px 'Playfair Display';margin:0"></h2></div><button class="close" onclick="closeAll()">×</button></div>
+<p id="pmDesc" style="color:#777;line-height:1.7"></p>
+<div class="field"><label>Size</label><select id="pmSize"></select></div>
+<div style="font-size:15px;margin:18px 0">৳ <span id="pmPrice"></span></div>
+<button class="full" onclick="addProduct()">ADD TO BAG</button>
+</div>
+
+<script>
+let cart=[],selected={};
+const money=n=>'৳ '+n.toLocaleString();
+function openProduct(name,price,desc,sizes){selected={name,price};pmName.textContent=name;pmPrice.textContent=price.toLocaleString();pmDesc.textContent=desc;pmSize.innerHTML=sizes.split(',').map(s=>`<option>${s}</option>`).join('');productModal.style.display='block';overlay.classList.add('show')}
+function addProduct(){cart.push({...selected,size:pmSize.value});render();productModal.style.display='none';openCart()}
+function render(){count.textContent=cart.length;let total=cart.reduce((a,x)=>a+x.price,0);document.getElementById('total').textContent=money(total);cartitems.innerHTML=cart.length?cart.map((x,i)=>`<div class="cartrow"><span>${x.name}<small>Size: ${x.size}</small></span><span>${money(x.price)} <button onclick="removeItem(${i})" style="border:0;background:none">×</button></span></div>`).join(''):'<p style="color:#777;line-height:1.7">Your bag is currently empty.</p>'}
+function removeItem(i){cart.splice(i,1);render()}
+function openCart(){drawer.classList.add('open');overlay.classList.add('show')}
+function closeCart(){drawer.classList.remove('open');if(checkout.style.display!=='block'&&productModal.style.display!=='block')overlay.classList.remove('show')}
+function openCheckout(){if(!cart.length){alert('Please add a product first.');return}drawer.classList.remove('open');checkout.style.display='block';overlay.classList.add('show')}
+function closeAll(){drawer.classList.remove('open');checkout.style.display='none';productModal.style.display='none';overlay.classList.remove('show')}
+function placeOrder(){
+let name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),address=document.getElementById('address').value.trim();
+if(!name||!phone||!address){alert('Please complete your name, phone and delivery address.');return}
+let pay=document.querySelector('input[name="pay"]:checked').value,total=cart.reduce((a,x)=>a+x.price,0),order='NVR-'+Date.now().toString().slice(-6);
+document.getElementById('successText').innerHTML=`Your order <strong>${order}</strong> has been prepared for <strong>${name}</strong>.<br>Total: <strong>${money(total)}</strong><br>Payment: <strong>${pay}</strong><br><br>In the live version, this order will be sent automatically to your store dashboard/WhatsApp and payment gateway.`;
+document.getElementById('checkoutform').style.display='none';document.getElementById('success').style.display='block';cart=[];render()
+}
+render();
+</script>
+</body></html>

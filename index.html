@@ -204,7 +204,9 @@
 <section class="modal checkout" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" hidden><button class="close" type="button" data-close aria-label="Close checkout">×</button><div class="eyebrow">NIRAVLE / Order request</div><h2 id="checkoutTitle">Checkout</h2><div class="summary" id="checkoutSummary"></div><form id="checkoutForm"><div class="fields"><label>Full name<input name="name" autocomplete="name" required maxlength="100"></label><label>Phone<input name="phone" autocomplete="tel" type="tel" required pattern="[+0-9 ()-]{10,20}" maxlength="20"></label><label class="full">Delivery address<textarea name="address" autocomplete="street-address" rows="3" maxlength="500" required></textarea></label><label>City / area<input name="city" autocomplete="address-level2" required maxlength="100"></label><label>Payment preference<select name="payment"><option>Cash on delivery (request)</option><option>bKash — arrange with seller</option><option>Nagad — arrange with seller</option></select></label><label class="full">Notes (including size, colour, gift request)<textarea name="notes" rows="2" maxlength="500"></textarea></label></div><p class="note">No online payment is collected. Submit the prepared message directly to NIRAVLE to request an order; the seller must confirm it.</p><div class="status" id="checkoutStatus" aria-live="polite"></div><button class="button wide" type="submit">Prepare order request ↗</button></form></section>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
 <script src="supabase-config.js" defer></script>
-<script src="shop.js" defer></script>
+
+<script src="niravle-storefront-fix.js" defer></script>
+  
 <script>
 (()=>{'use strict';
 /* OPTIONAL: add your actual verified WhatsApp business number (digits only) to enable one-tap order messages. */

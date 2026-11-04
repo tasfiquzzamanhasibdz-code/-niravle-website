@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIRAVLE | Haute Couture & Luxury Fashion House</title>
+    <meta name="description" content="Discover NIRAVLE - Premier destination for luxury sarees, artisan jewelry, tailored menswear, and handcrafted fashion accessories. World-class elegance defined.">
+    <meta name="keywords" content="Luxury Fashion, Handloom Sarees, Oxidized Jewelry, Designer Clothing, Bangladesh Luxury Wear, Niravle Couture">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="NIRAVLE | Luxury Fashion House">
+    <meta property="og:description" content="Elegance Redefined. Explore our exclusive haute couture collection.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome & Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            dark: '#0F0F0F',
+                            cream: '#F9F6F0',
+                            accent: '#C5A880'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Scrolling & Custom Scrollbar */
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0F0F0F; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 3px; }
+
+        /* Dynamic Theme Variables */
+        :root {
+            --bg-primary: #0F0F0F;
+            --text-primary: #F9F6F0;
+            --accent-color: #D4AF37;
+            --card-bg: #1A1A1A;
+        }
+
+        .theme-earthy {
+            --bg-primary: #1C1917;
+            --text-primary: #F5F5F4;
+            --accent-color: #D97706;
+            --card-bg: #292524;
+        }
+
+        .theme-pastel {
+            --bg-primary: #FAFAF9;
+            --text-primary: #1C1917;
+            --accent-color: #991B1B;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: all 0.4s ease;
+        }
+
+        .glass-nav {
+            background: rgba(15, 15, 15, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-gold text-black text-xs font-semibold py-2 px-4 text-center tracking-widest uppercase flex justify-between items-center px-8">
+        <span class="hidden md:inline"><i class="fa-solid fa-truck-fast mr-2"></i> Complimentary Express Worldwide Shipping on Orders Over $200</span>
+        <span class="mx-auto md:mx-0">NIRAVLE AUTUMN/WINTER CATION '26 LIVE</span>
+        <div class="hidden md:flex space-x-4">
+            <button onclick="setTheme('default')" class="hover:underline">Midnight</button>
+            <button onclick="setTheme('earthy')" class="hover:underline">Earthy</button>
+            <button onclick="setTheme('pastel')" class="hover:underline">Minimal</button>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 glass-nav border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-gold focus:outline-none">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Brand Logo -->
+                <div class="flex-shrink-0 text-center">
+                    <a href="index.html" class="font-serif text-3xl font-bold tracking-widest text-white uppercase hover:text-brand-gold transition">
+                        NIRAVLE<span class="text-brand-gold">.</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wider uppercase">
+                    <a href="#collections" class="hover:text-brand-gold transition duration-200">Collections</a>
+                    <a href="#featured" class="hover:text-brand-gold transition duration-200">New Arrivals</a>
+                    <a href="#sarees" class="hover:text-brand-gold transition duration-200">Handloom Sarees</a>
+                    <a href="#jewelry" class="hover:text-brand-gold transition duration-200">Jewelry</a>
+                    <a href="#about" class="hover:text-brand-gold transition duration-200">Our Heritage</a>
+                </div>
+
+                <!-- Navigation Icons -->
+                <div class="flex items-center space-x-6">
+                    <button class="hover:text-brand-gold transition text-lg"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <a href="admin.html" class="hover:text-brand-gold transition text-lg" title="Account / Admin"><i class="fa-regular fa-user"></i></a>
+                    <button class="hover:text-brand-gold transition text-lg relative">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="absolute -top-2 -right-2 bg-brand-gold text-black text-xs font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <button id="cart-btn" onclick="toggleCart()" class="hover:text-brand-gold transition text-lg relative">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-brand-gold text-black text-xs font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop" alt="NIRAVLE Haute Couture" class="w-full h-full object-cover object-center filter brightness-50">
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <p class="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-4">Unveiling Royal Traditions</p>
+            <h1 class="font-serif text-5xl sm:text-7xl font-bold tracking-tight text-white mb-6">Timeless Elegance & Artisan Luxury</h1>
+            <p class="text-lg text-gray-200 font-light mb-8 max-w-2xl mx-auto">Explore hand-woven silk sarees, heritage oxidized ornaments, and contemporary luxury tailored for the discerning individual.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#featured" class="bg-brand-gold text-black px-8 py-4 font-semibold text-sm tracking-wider uppercase hover:bg-white transition duration-300">Shop Collection</a>
+                <a href="#about" class="border border-white text-white px-8 py-4 font-semibold text-sm tracking-wider uppercase hover:bg-white hover:text-black transition duration-300">Discover Heritage</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Trust Badges -->
+    <section class="border-y border-white/10 py-10 bg-black/40">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="space-y-2">
+                <i class="fa-solid fa-gem text-2xl text-brand-gold"></i>
+                <h4 class="font-serif font-bold text-base">Authentic Artistry</h4>
+                <p class="text-xs text-gray-400">100% Handcrafted by master weavers</p>
+            </div>
+            <div class="space-y-2">
+                <i class="fa-solid fa-globe text-2xl text-brand-gold"></i>
+                <h4 class="font-serif font-bold text-base">Global Express</h4>
+                <p class="text-xs text-gray-400">Insured worldwide door-delivery</p>
+            </div>
+            <div class="space-y-2">
+                <i class="fa-solid fa-shield-halved text-2xl text-brand-gold"></i>
+                <h4 class="font-serif font-bold text-base">Secure Checkout</h4>
+                <p class="text-xs text-gray-400">Encrypted global payment gateways</p>
+            </div>
+            <div class="space-y-2">
+                <i class="fa-solid fa-arrow-rotate-left text-2xl text-brand-gold"></i>
+                <h4 class="font-serif font-bold text-base">Bespoke Fitting</h4>
+                <p class="text-xs text-gray-400">Custom tailoring & easy returns</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories Grid -->
+    <section id="collections" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="font-serif text-4xl font-bold tracking-wider uppercase mb-3">Curated Categories</h2>
+            <div class="w-24 h-1 bg-brand-gold mx-auto mb-4"></div>
+            <p class="text-gray-400 text-sm max-w-md mx-auto">Selected signature styles designed to elevate your fashion presence.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Category 1 -->
+            <div class="group relative h-96 overflow-hidden rounded-sm cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop" alt="Handloom Sarees" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+                    <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-1">Traditional</span>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-2">Heritage Handloom Sarees</h3>
+                    <a href="#sarees" class="text-sm font-semibold text-white group-hover:text-brand-gold flex items-center gap-2 transition">Explore Collection <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="group relative h-96 overflow-hidden rounded-sm cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1000&auto=format&fit=crop" alt="Artisan Jewelry" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+                    <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-1">Ornaments</span>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-2">Oxidized & Royal Jewelry</h3>
+                    <a href="#jewelry" class="text-sm font-semibold text-white group-hover:text-brand-gold flex items-center gap-2 transition">Explore Collection <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="group relative h-96 overflow-hidden rounded-sm cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=1000&auto=format&fit=crop" alt="Luxury Menswear" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+                    <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-1">Contemporary</span>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-2">Tailored Menswear & Couture</h3>
+                    <a href="#featured" class="text-sm font-semibold text-white group-hover:text-brand-gold flex items-center gap-2 transition">Explore Collection <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Product Showcase (Populated via JS/Supabase) -->
+    <section id="featured" class="py-16 bg-black/30 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-gold text-xs font-bold tracking-widest uppercase">Handpicked Elegance</span>
+                    <h2 class="font-serif text-4xl font-bold mt-1">New Arrivals</h2>
+                </div>
+                <!-- Filter Tabs -->
+                <div class="flex space-x-6 mt-6 md:mt-0 text-sm uppercase tracking-wider font-medium text-gray-400">
+                    <button class="text-brand-gold border-b-2 border-brand-gold pb-1">All Products</button>
+                    <button class="hover:text-white transition pb-1">Sarees</button>
+                    <button class="hover:text-white transition pb-1">Jewelry</button>
+                    <button class="hover:text-white transition pb-1">Accessories</button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Sample Hardcoded Product 1 -->
+                <div class="product-card group bg-stone-900 border border-white/5 overflow-hidden transition-all duration-300 hover:border-brand-gold/50">
+                    <div class="relative h-80 overflow-hidden bg-black">
+                        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop" alt="Pure Jamdani Silk Saree" class="product-image w-full h-full object-cover transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-brand-gold text-black text-[10px] font-bold px-2 py-1 uppercase tracking-wider">Bestseller</span>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                            <button onclick="addToCart('Royal Jamdani Saree', 18500)" class="bg-white text-black p-3 hover:bg-brand-gold transition rounded-full"><i class="fa-solid fa-bag-shopping"></i></button>
+                            <button class="bg-white text-black p-3 hover:bg-brand-gold transition rounded-full"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Handloom Saree</p>
+                        <h3 class="font-serif font-bold text-lg text-white group-hover:text-brand-gold transition">Royal Muslin Jamdani</h3>
+                        <div class="flex items-center justify-between mt-3">
+                            <span class="text-brand-gold font-bold">৳18,500</span>
+                            <span class="text-xs text-gray-500 line-through">৳22,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Hardcrafted Product 2 -->
+                <div class="product-card group bg-stone-900 border border-white/5 overflow-hidden transition-all duration-300 hover:border-brand-gold/50">
+                    <div class="relative h-80 overflow-hidden bg-black">
+                        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800&auto=format&fit=crop" alt="Oxidized Choker Necklace" class="product-image w-full h-full object-cover transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-white text-black text-[10px] font-bold px-2 py-1 uppercase tracking-wider">Exclusive</span>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                            <button onclick="addToCart('Royal Oxidized Choker', 4200)" class="bg-white text-black p-3 hover:bg-brand-gold transition rounded-full"><i class="fa-solid fa-bag-shopping"></i></button>
+                            <button class="bg-white text-black p-3 hover:bg-brand-gold transition rounded-full"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Jewelry</p>
+                        <h3 class="font-serif font-bold text-lg text-white group-hover:text-brand-gold transition">Antique Oxidized Choker</h3>
+                        <div class="flex items-center justify-between mt-3">
+                            <span class="text-brand-gold font-bold">৳4,200</span>
+                            <span class="text-xs text-gray-500 line-through">৳5,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Hardcrafted Product 3 -->
+                <div class="product-card group bg-stone-900 border border-white/5 overflow-hidden transition-all duration-300 hover:border-brand-gold/50">
+                    <div class="relative h-80 overflow-hidden bg-black">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop" alt="Handcrafted Blazer" class="product-image w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                            <button onclick="addToCart('Signature Velvet Bandhgala', 15000)" class="bg-white text-black p-3 hover:bg-brand-gold transition rounded-full"><i class="fa-solid fa-bag-shopping"></i></button>
+                            <button class="bg-white text-black p-3 hover:bg-brand-gold transition rounded-full"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Menswear</p>
+                        <h3 class="font-serif font-bold text-lg text-white group-hover:text-brand-gold transition">Velvet Bandhgala Suit</h3>
+                        <div class="flex items-center justify-between mt-3">
+                            <span class="text-brand-gold font-bold">৳15,000</span>
+                            <span class="text-xs text-gray-500">In Stock</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Hardcrafted Product 4 -->
+                <div class="product-card group bg-stone-900 border border-white/5 overflow-hidden transition-all duration-300 hover:border-brand-gold/50">
+                    <div class="relative h-80 overflow-hidden bg-black">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=800&auto=format&fit=crop" alt="Designer Pearl Jhumka" class="product-image w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                            <button onclick="addToCart('Heritage Pearl Jhumka', 2800)" class="bg-white text-black p-3 hover:bg-brand-gold transition rounded-full"><i class="fa-solid fa-bag-shopping"></i></button>
+                            <button class="bg-white text-black p-3 hover:bg-brand-gold transition rounded-full"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Jewelry</p>
+                        <h3 class="font-serif font-bold text-lg text-white group-hover:text-brand-gold transition">Heritage Pearl Jhumka</h3>
+                        <div class="flex items-center justify-between mt-3">
+                            <span class="text-brand-gold font-bold">৳2,800</span>
+                            <span class="text-xs text-gray-500 line-through">৳3,500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage & Artisan Story Section -->
+    <section id="about" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=1000&auto=format&fit=crop" alt="Handloom Weaving Craftsmanship" class="w-full rounded-sm border border-white/10 shadow-2xl">
+                <div class="absolute -bottom-8 -right-8 hidden sm:block bg-brand-gold text-black p-6 font-serif font-bold text-xl max-w-xs shadow-xl">
+                    "Preserving ancient loom artistry for modern connoisseurs."
+                </div>
+            </div>
+            <div class="space-y-6">
+                <span class="text-brand-gold text-xs font-bold tracking-widest uppercase">The NIRAVLE Story</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold leading-tight">Master Craftsmanship Meets Modern Elegance</h2>
+                <p class="text-gray-300 font-light leading-relaxed">NIRAVLE was born out of a passion to honor traditional Bengali handloom heritage and high-grade artisanal craftsmanship. Every piece in our boutique is meticulously crafted by generational artisans, ensuring unrivaled quality, authenticity, and royal elegance.</p>
+                <div class="pt-4 grid grid-cols-2 gap-6 border-t border-white/10">
+                    <div>
+                        <h4 class="font-serif text-3xl font-bold text-brand-gold">100+</h4>
+                        <p class="text-xs text-gray-400 uppercase tracking-wider mt-1">Master Artisans</p>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-3xl font-bold text-brand-gold">10,000+</h4>
+                        <p class="text-xs text-gray-400 uppercase tracking-wider mt-1">Global Patrons</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide-in Cart Drawer (Interactive) -->
+    <div id="cart-drawer" class="fixed inset-y-0 right-0 w-full sm:w-96 bg-stone-900 z-50 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-white/10 flex flex-col justify-between">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+            <h3 class="font-serif text-xl font-bold flex items-center gap-2"><i class="fa-solid fa-bag-shopping text-brand-gold"></i> Your Shopping Bag</h3>
+            <button onclick="toggleCart()" class="text-gray-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cart-items" class="p-6 overflow-y-auto flex-grow space-y-4">
+            <p class="text-gray-400 text-center text-sm my-12">Your shopping bag is currently empty.</p>
+        </div>
+        <div class="p-6 border-t border-white/10 bg-black/50 space-y-4">
+            <div class="flex justify-between font-serif font-bold text-lg">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal" class="text-brand-gold">৳0</span>
+            </div>
+            <button class="w-full bg-brand-gold text-black py-4 font-bold uppercase tracking-wider hover:bg-white transition duration-300">Proceed To Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="space-y-4">
+                <a href="index.html" class="font-serif text-2xl font-bold tracking-widest text-white uppercase">NIRAVLE<span class="text-brand-gold">.</span></a>
+                <p class="text-xs text-gray-400 leading-relaxed">The premier house for luxury handloom sarees, bespoke heritage jewelry, and high-fashion couture.</p>
+                <div class="flex space-x-4 text-lg text-gray-400">
+                    <a href="#" class="hover:text-brand-gold"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-brand-gold"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-brand-gold"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-serif font-bold text-sm uppercase tracking-wider text-brand-gold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-xs text-gray-400 uppercase tracking-wider">
+                    <li><a href="#collections" class="hover:text-white transition">Collections</a></li>
+                    <li><a href="#featured" class="hover:text-white transition">New Arrivals</a></li>
+                    <li><a href="#about" class="hover:text-white transition">Artisan Story</a></li>
+                    <li><a href="admin.html" class="hover:text-white transition">Client Portal</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif font-bold text-sm uppercase tracking-wider text-brand-gold mb-4">Customer Care</h4>
+                <ul class="space-y-2 text-xs text-gray-400 uppercase tracking-wider">
+                    <li><a href="#" class="hover:text-white transition">Worldwide Shipping</a></li>
+                    <li><a href="#" class="hover:text-white transition">Bespoke Fitting</a></li>
+                    <li><a href="#" class="hover:text-white transition">Returns & Exchanges</a></li>
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif font-bold text-sm uppercase tracking-wider text-brand-gold mb-4">Newsletter</h4>
+                <p class="text-xs text-gray-400 mb-4">Subscribe to receive private invitations to new collections and haute couture previews.</p>
+                <form class="flex">
+                    <input type="email" placeholder="Your Email Address" class="bg-stone-900 text-xs px-4 py-3 w-full border border-white/10 focus:outline-none focus:border-brand-gold text-white">
+                    <button class="bg-brand-gold text-black px-4 py-3 font-bold text-xs uppercase hover:bg-white transition"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 border-t border-white/5 pt-8 text-center text-xs text-gray-500">
+            <p>&copy; 2026 NIRAVLE Luxury Fashion House. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts Integration for Backend/Supabase -->
+    <script src="supabase-config.js"></script>
+    <script src="niravle-premium.js"></script>
+    <script src="niravle-storefront-fix.js"></script>
+    <script src="shop.js"></script>
+
+    <!-- Custom Interactive Logic -->
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('translate-x-full');
+        }
+
+        function addToCart(title, price) {
+            cart.push({ title, price });
+            updateCart();
+            toggleCart();
+        }
+
+        function updateCart() {
+            document.getElementById('cart-count').innerText = cart.length;
+            const container = document.getElementById('cart-items');
+            
+            if(cart.length === 0) {
+                container.innerHTML = '<p class="text-gray-400 text-center text-sm my-12">Your shopping bag is currently empty.</p>';
+                document.getElementById('cart-subtotal').innerText = '৳0';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `
+                    <div class="flex items-center justify-between bg-black/40 p-3 rounded border border-white/5">
+                        <div>
+                            <h4 class="font-serif font-bold text-sm text-white">${item.title}</h4>
+                            <p class="text-xs text-brand-gold">৳${item.price.toLocaleString()}</p>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-gray-500 hover:text-red-400 text-xs"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+            document.getElementById('cart-subtotal').innerText = '৳' + total.toLocaleString();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function setTheme(theme) {
+            document.body.className = "font-sans antialiased overflow-x-hidden";
+            if(theme === 'earthy') document.body.classList.add('theme-earthy');
+            if(theme === 'pastel') document.body.classList.add('theme-pastel');
+        }
+    </script>
+</body>
+</html>
